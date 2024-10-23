@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.135.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.135.0/examples/js/loaders/FontLoader.js"></script> <!-- Load FontLoader -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.135.0/examples/fonts/helvetiker_regular.typeface.json"></script> <!-- Load font -->
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine</h1>
+        <div class="rule-container">
+            <div>
+                <textarea id="ruleInput1" rows="4" cols="50">{
+  "age": { "operator": ">", "value": 30 }
+}</textarea>
+
+                <textarea id="ruleInput2" rows="4" cols="50">{
+  "location": { "operator": "=", "value": "Remote" }
+}</textarea>
+
+                <button onclick="combineRules()">Combine Rules</button>
+
+                <textarea id="ruleInput" rows="4" cols="50"></textarea>
+                <button onclick="submitRule()">Create and Evaluate Rule</button>
+            </div>
+
+            <div>
+                <textarea id="dataInput" rows="4" cols="50">{
+  "age": 35,
+  "location": "Remote"
+}</textarea>
+            </div>
+
+            <h2>Rules AST</h2>
+            <pre id="astOutput"></pre>
+
+            <h2>Evaluation Result</h2>
+            <pre id="resultOutput"></pre>
+
+            <canvas id="rulesCanvas" width="600" height="400"></canvas> <!-- Canvas for Three.js -->
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

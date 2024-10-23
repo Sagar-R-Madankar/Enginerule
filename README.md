@@ -1,0 +1,1 @@
+# Rule Engine Project nThis project is a simple rule engine that evaluates conditions and generates an Abstract Syntax Tree (AST) for the rules. It is built with Node.js for the backend and vanilla JavaScript for the frontend. 
